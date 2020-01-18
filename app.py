@@ -4,10 +4,11 @@ from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 import json
 import pyodbc
+from flask_cors import CORS
 
 # Initialize Flask
 app = Flask(__name__)
-
+CORS(app, resources={r"*": {"origins": "*"}})
 # Setup Flask Restful framework
 api = Api(app)
 parser = reqparse.RequestParser()
