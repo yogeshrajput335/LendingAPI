@@ -15,7 +15,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('customer')
 
 # Create connection to Azure SQL
-conn = pyodbc.connect(os.environ['SQLAZURECONNSTR_WWIF'])
+conn = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:lendingapp.database.windows.net,1433;Database=lending_db;Uid=admin_1;Pwd=hacknight@1;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 
 class Queryable(Resource):
     def executeQueryJson(self, verb, payload=None):
