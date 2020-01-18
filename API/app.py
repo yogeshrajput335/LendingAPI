@@ -175,8 +175,11 @@ class Trackapplications(Queryable):
     def get(self):     
         result = self.executeQueryJson("get")   
         return result, 200
-        
-
+#LoanStatus        
+class Loanstatus(Queryable):
+    def get(self):     
+        result = self.executeQueryJson("get")   
+        return result, 200
 # Loan Class
 class Loan(Queryable):
     def get(self, loan_id):     
@@ -256,3 +259,4 @@ api.add_resource(User, '/loan', '/loan/<loan_id>')
 api.add_resource(Users, '/loans)
 api.add_resource(User, '/loanrepayment', '/loanrepayment/<loanrepayment_id>')
 api.add_resource(Users, '/loanrepayments)
+api.add_resource(Loanstatus, '/loanstatus')
